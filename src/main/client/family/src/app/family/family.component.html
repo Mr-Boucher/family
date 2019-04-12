@@ -1,0 +1,13 @@
+<div>
+  <div class="data_space"></div>
+  <div class="data_view">
+    <ul *ngIf="(data) else noData">
+      {{data.totalCount}}
+      <li *ngFor="let item of getFamily() ">
+        <span class="value">{{item.firstName}}</span>
+      </li>
+    </ul>
+    <ng-template #noData>No Data Available</ng-template>
+  </div>
+</div>
+
