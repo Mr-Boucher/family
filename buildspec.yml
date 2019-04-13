@@ -21,7 +21,7 @@ phases:
       - echo CLIENT=${CLIENT}
       - cd ${CLIENT}
       - pwd
-      - ng build --env=${BUILD_ENV}
+      - ng build
       - cd ${HOME}
   post_build:
     commands:
