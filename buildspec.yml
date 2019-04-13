@@ -6,7 +6,7 @@ environment_variables:
 phases:
   install:
     commands:
-      - echo pwd
+      - pwd
       - echo Installing source NPM dependencies...
       - pushd family/src/main/client/family
       - npm install
@@ -14,6 +14,7 @@ phases:
       - popd
   build:
     commands:
+      - pwd
       - echo Build started on `date`
       - pushd family/src/main/client/family
       - ng build --env=${BUILD_ENV}
