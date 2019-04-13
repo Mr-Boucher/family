@@ -6,9 +6,12 @@ environment_variables:
 phases:
   install:
     commands:
+      - echo pwd
       - echo Installing source NPM dependencies...
+      - pushd src/main/client/family
       - npm install
       - npm install -g @angular/cli
+      - popd
   build:
     commands:
       - echo Build started on `date`
