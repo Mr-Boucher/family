@@ -9,7 +9,7 @@ import {FamilyComponent} from "./family/family.component";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'A family map';
+  title = 'My Playground';
 
   constructor(private _alertService:AlertService) {
   }
