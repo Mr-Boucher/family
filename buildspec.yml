@@ -10,6 +10,7 @@ phases:
     commands:
 
       - echo Installing source NPM dependencies...
+      - echo ${CLIENT}
       - cd ${CLIENT}
       - pwd
       - npm install
@@ -18,6 +19,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo ${CLIENT}
       - cd ${CLIENT}
       - pwd
       - ng build --env=${BUILD_ENV}
