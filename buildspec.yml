@@ -1,7 +1,7 @@
 version: 0.1
 environment_variables:
   plaintext:
-    S3_BUCKET: "hello-world.andrescastano.com"
+    S3_BUCKET: "smileybane.net"
     BUILD_ENV: "prod"
 phases:
   install:
@@ -12,7 +12,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - pushd src/main/client/family
       - ng build --env=${BUILD_ENV}
+      - popd
   post_build:
     commands:
       - aws s3 cp dist s3://${S3_BUCKET} --recursive
