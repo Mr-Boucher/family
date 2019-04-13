@@ -8,6 +8,7 @@ environment_variables:
 phases:
   install:
     commands:
+      - cd src
       - ls
       - echo Installing source NPM dependencies...
       - echo ${CLIENT}
