@@ -8,14 +8,14 @@ phases:
     commands:
       - echo pwd
       - echo Installing source NPM dependencies...
-      - pushd src/main/client/family
+      - pushd family/src/main/client/family
       - npm install
       - npm install -g @angular/cli
       - popd
   build:
     commands:
       - echo Build started on `date`
-      - pushd src/main/client/family
+      - pushd family/src/main/client/family
       - ng build --env=${BUILD_ENV}
       - popd
   post_build:
