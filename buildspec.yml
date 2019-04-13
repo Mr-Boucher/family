@@ -7,6 +7,7 @@ phases:
   install:
     commands:
       - pwd
+      - ls
       - echo Installing source NPM dependencies...
       - pushd family/src/main/client/family
       - npm install
@@ -15,6 +16,7 @@ phases:
   build:
     commands:
       - pwd
+      - ls
       - echo Build started on `date`
       - pushd family/src/main/client/family
       - ng build --env=${BUILD_ENV}
