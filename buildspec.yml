@@ -3,24 +3,27 @@ environment_variables:
   plaintext:
     S3_BUCKET: "smileybane.net"
     BUILD_ENV: "prod"
+    CLIENT: "src/main/client/family"
+    HOME: "../../../.."
 phases:
   install:
     commands:
 
       - echo Installing source NPM dependencies...
       - bash
-      - pushd src/main/client/family
+      - cd ${CLIENT}
+      - pwd
       - npm install
       - npm install -g @angular/cli
-      - popd
+      - cd ${HOME}
   build:
     commands:
       - pwd
       - ls
       - echo Build started on `date`
-      - pushd src/main/client/family
+      - cd ${CLIENT}
       - ng build --env=${BUILD_ENV}
-      - popd
+      - cd ${HOME}
   post_build:
     commands:
       - aws s3 cp dist s3://${S3_BUCKET} --recursive
