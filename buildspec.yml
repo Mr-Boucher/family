@@ -6,11 +6,9 @@ environment_variables:
 phases:
   install:
     commands:
-      - pwd
-      - ls
-      - ls src
-      - ls src/main
+
       - echo Installing source NPM dependencies...
+      - bash
       - pushd src/main/client/family
       - npm install
       - npm install -g @angular/cli
